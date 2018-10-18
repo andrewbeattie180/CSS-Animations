@@ -42,7 +42,7 @@ html, body{
     position: absolute;
     left: 0px;
     top: -80px;
-    animation: ride 3s both infinite linear, jump .3s infinite ease-in;
+    animation: ride 3s both infinite linear, jump 0.3s infinite ease-in;
 
 }
 .mugman{
