@@ -1,0 +1,139 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.grass, .sky, .runway{
+    position: relative;
+}
+
+.sky{
+    height:40%;
+    background: darkblue;
+    background-image:
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 10px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 5px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 10px),
+    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 5px),
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 10px),
+    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 5px);
+    background-size: 750px 750px, 550px 550px, 450px 450px, 350px 350px, 250px 250px, 150px 150px;
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px, 110px 200px;
+}
+.runway{
+    height: 15%;
+    background: dimgrey;
+    box-sizing: border-box;
+    border-top: 10px solid grey;
+    border-bottom: 10px solid grey;
+    width: 100%;
+}
+.grass{
+    background: seagreen;
+    height:10%;
+
+}
+.lines{
+    box-sizing: border-box;
+    border: 6px dashed #fff;
+    height: 0px;
+    width: 100%;
+    position: absolute;
+    top: 45%;
+}
+.cloud{
+    position: absolute;
+}
+.cloud:nth-child(1){
+    width:200px;
+    top:120px;
+    opacity: 0.5;
+    animation-name: windspeed;
+    animation-duration: 55s; animation-fill-mode: both;
+    animation-iteration-count: infinite;    
+    animation-timing-function: linear;
+}
+
+.cloud:nth-child(2){
+    width:350px;
+    top:0px;
+    opacity: 0.8;
+    animation-name: windspeed;
+    animation-duration: 66s; animation-fill-mode: both;
+    animation-iteration-count: infinite;    
+    animation-timing-function: linear;
+}
+.cloud:nth-child(3){
+    width:570px;
+    top:300px;
+    opacity: 0.9;
+    animation-name: windspeed;
+    animation-duration: 120s; animation-fill-mode: both;
+    animation-iteration-count: infinite;    
+    animation-timing-function: linear;
+}
+
+.cloud:nth-child(4){
+    width:1000px;
+    top:1px;
+    opacity:0.3;
+    animation-name: windspeed;
+    animation-duration: 133s; animation-fill-mode: both;
+    animation-iteration-count: infinite;    
+    animation-timing-function: linear;
+}
+.moon{
+    position: absolute;
+    width:80px;
+    top:70px;
+    animation-name: windspeed;
+    animation-duration: 200s; 
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;    
+    animation-timing-function: linear;
+}
+.cuphead{
+    height:75%;
+    position: absolute;
+    left: 0px;
+    top: -80px;
+    animation-name: landing;
+    animation-duration: 8s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+.mugman{
+    transform: scaleX(-1);
+    height:50%;
+    position: absolute;
+    left: 0px;
+    top: -17.5%;
+    animation-name: ride;
+    animation-duration: 8s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+/*//KEYFRAMES//*/
+
+@keyframes ride{
+    0%{transform: translateX(-200px)} 
+    100%{transform: translateX(2000px)};
+}
+@keyframes windspeed{
+    from{left: -300px}
+    to{left:100%}
+}
+@keyframes jump{
+    0%{top:-80px}
+    50%{top:-250px}
+    100%{top:-80px};
+}
+@keyframes landing{
+    0%{transform: translate(-200px, -300px)} 
+    50%{transform: translate(1800px, 0px)}
+    100%{transform:translate(2000px,0px)};
+ 
+}

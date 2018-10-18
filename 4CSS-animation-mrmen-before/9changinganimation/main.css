@@ -6,7 +6,7 @@ html, body{
 }
 
 .grass, .sky, .road {
-    position: relative;
+    position: absolute;
 }
 
 .sky{
@@ -15,10 +15,17 @@ html, body{
 }
 
 .grass{
-    height: 30%;
     background: seagreen;
 }
-
+.grass:nth-child(1){
+    height:10%
+}
+.grass:nth-child(2){
+    height:20%
+}
+.grass:nth-child(3){
+    height:15%
+}
 .road{
     height: 30%;
     background: dimgrey;
