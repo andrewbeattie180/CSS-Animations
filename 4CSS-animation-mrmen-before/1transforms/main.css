@@ -1,0 +1,36 @@
+body {
+    background: lightblue;
+    text-align: center;
+}
+
+.wrapper {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+img{
+   /* transform: translateX(200px); */ /*moves image 200px along main axis*/
+   /* transform: translateY(200px);*/ /* moves image  200px along cross axis*/
+   /* transform:translate(-200px, -200px); */ /* moves image 200px along cross axis (-) and main axis (-)*/
+}   
+img{
+    /* transform: scaleX(.5);*/ /* scales by a factor along the main axis*/
+    /* transform: scaleY(3);*/ /* scales by a factor along the cross axis*/
+    /* transform: scale(3,3);*/ /* scales by a factor along both axes */
+}
+
+img{
+    /*transform: rotateX(60deg);*/ /*rotates around the main axis*/
+    /*transform: rotateY(60deg);*/ /*rotates around the cross axis*/
+    /*transform: rotateZ(60deg);*/ /*rotates around the z axis*/
+}
+
+img{
+   /* transform:rotateZ(-90deg) translateY(200px) scale(2); */
+}
+
+img{
+    transform: rotateZ(-90deg);
+    transform: translateY(200px);
+    transform: scale(2);
+}
