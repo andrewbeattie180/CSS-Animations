@@ -46,7 +46,7 @@ html, body{
 .cloud{
     position: absolute;
 }
-.cloud:nth-child(1){
+.cloud:nth-child(5){
     width:200px;
     top:120px;
     opacity: 0.5;
@@ -86,7 +86,7 @@ html, body{
 }
 .moon{
     position: absolute;
-    width:80px;
+    width:200px;
     top:70px;
     animation-name: windspeed;
     animation-duration: 200s; 
@@ -94,46 +94,78 @@ html, body{
     animation-iteration-count: infinite;    
     animation-timing-function: linear;
 }
+.bird{
+    background-image: url("img/bird-cells.svg");
+    background-size: auto 100%;
+    width:55px;
+    height:125px;
+    will-change:background-position;
+    animation-name: fly-cycle;
+    animation-timing-function:steps(10);
+    animation-iteration-count: infinite;
+    animation-duration:1s;
+    animation-delay:-0.5s;
+}
+.bird-container{
+    position: absolute;
+    top:20%;
+    left:-10%;
+    transform: scale(0);
+    translateX:(-10vw);
+    will-change: transform;
+    animation-name: fly-right;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 15s;
+    animation-delay: 1s;
+
+}
 .cuphead{
     height:75%;
     position: absolute;
     left: 0px;
     top: -80px;
-    animation-name: landing;
-    animation-duration: 8s;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
+    animation: ride 8s both infinite ease-out, landing 8s infinite cubic-bezier(.63,1.69,.52,.61);
 }
 .mugman{
-    transform: scaleX(-1);
     height:50%;
     position: absolute;
     left: 0px;
     top: -17.5%;
-    animation-name: ride;
-    animation-duration: 8s;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
-    animation-direction: reverse;
+    animation: ride 7s both infinite ease-out reverse, takeoff 7s infinite cubic-bezier(.42,-0.02,.99,.76);
 }
+
 /*//KEYFRAMES//*/
 
 @keyframes ride{
-    0%{transform: translateX(-200px)} 
-    100%{transform: translateX(2000px)};
+    0%{left:0px} 
+    100%{left:100%};
 }
 @keyframes windspeed{
     from{left: -300px}
-    to{left:100%}
+    to{left:100%};
 }
-@keyframes jump{
-    0%{top:-80px}
-    50%{top:-250px}
-    100%{top:-80px};
+@keyframes takeoff{
+    0%{top:-17%}
+    100%{top: -200%};
 }
 @keyframes landing{
-    0%{transform: translate(-200px, -300px)} 
-    50%{transform: translate(1800px, 0px)}
-    100%{transform:translate(2000px,0px)};
- 
+    0%{top:-280%}
+    100%{top:-80px}
+    }
+@keyframes fly-cycle{
+    100%{
+        background-position:-900px 0;
+    }
+}
+@keyframes fly-right{
+    0%{transform:scale(0.3) translateX(-10vw);}
+    10%{transform: translateY(2vh) translateX(10vw) scale(0.4)}
+    20%{transform: translateY(0vh) translateX(30vw) scale(0.5)}
+    30%{transform: translateY(4vh) translateX(50vw) scale(0.6)}
+    40%{transform: translateY(2vh) translateX(70vw) scale(0.6)}
+    50%{transform: translateY(0vh) translateX(90vw) scale(0.6)}
+    60%{transform: translateY(0vh) translateX(110vw) scale(0.6)}
+    100%{transform: translateY(0vh) translateX(110vw) scale(0.6)}
+
 }
