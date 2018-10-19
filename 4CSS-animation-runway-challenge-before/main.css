@@ -88,11 +88,7 @@ html, body{
     position: absolute;
     width:200px;
     top:70px;
-    animation-name: windspeed;
-    animation-duration: 200s; 
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;    
-    animation-timing-function: linear;
+    animation: windspeed 200s both infinite linear;
 }
 .bird{
     background-image: url("img/bird-cells.svg");
@@ -142,7 +138,7 @@ html, body{
     100%{left:100%};
 }
 @keyframes windspeed{
-    from{left: -300px}
+    from{left: -500px}
     to{left:100%};
 }
 @keyframes takeoff{
