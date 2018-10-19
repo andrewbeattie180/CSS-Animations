@@ -121,7 +121,7 @@ html, body{
     position: absolute;
     left: 0px;
     top: -80px;
-    animation: ride 8s both infinite ease-out, landing 8s infinite cubic-bezier(.63,1.69,.52,.61);
+    animation: ride 8s both infinite ease-out, landing 8s infinite linear;
 }
 .mugman{
     height:50%;
@@ -143,10 +143,15 @@ html, body{
 }
 @keyframes takeoff{
     0%{top:-17%}
+    30% {top:-17%}
+    90% {top:-190%}
     100%{top: -200%};
 }
 @keyframes landing{
     0%{top:-280%}
+    50%{top:-80px}
+    60%{top:-120px}
+    70%{top:-80px}
     100%{top:-80px}
     }
 @keyframes fly-cycle{
