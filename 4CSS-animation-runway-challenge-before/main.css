@@ -144,7 +144,7 @@ html, body{
 @keyframes takeoff{
     0%{top:-17%}
     30% {top:-17%}
-    90% {top:-190%}
+    90% {top:-195%}
     100%{top: -200%};
 }
 @keyframes landing{
@@ -153,7 +153,7 @@ html, body{
     60%{top:-120px}
     70%{top:-80px}
     100%{top:-80px}
-    }
+}
 @keyframes fly-cycle{
     100%{
         background-position:-900px 0;
